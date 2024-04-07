@@ -1,8 +1,38 @@
-﻿namespace SemesterProject2.ViewModels;
+﻿using ReactiveUI;
+using System;
+using System.Reactive.Linq;
 
-public class MainWindowViewModel : ViewModelBase
+
+namespace SemesterProject2.ViewModels
 {
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+    public class MainWindowViewModel : ViewModelBase
+    {
+
+        
+        private ViewModelBase _contentViewModel;
+
+    
+        public MainWindowViewModel()
+        {
+            
+            _contentViewModel = new MainMenuViewModel();
+           
+        }
+    
+
+        public ViewModelBase ContentViewModel
+        {
+            get => _contentViewModel;
+            private set => this.RaiseAndSetIfChanged(ref _contentViewModel, value);
+        }
+        
+        public void Menu()
+        {
+            MainMenuViewModel mainMenuViewModel = new();
+            ContentViewModel = mainMenuViewModel;
+        }
+    
+        
+
+    }
 }

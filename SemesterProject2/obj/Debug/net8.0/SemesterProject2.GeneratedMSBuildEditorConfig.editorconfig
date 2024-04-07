@@ -20,5 +20,8 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
