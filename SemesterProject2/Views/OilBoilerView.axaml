@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SemesterProject2.ViewModels"
+             xmlns:views="clr-namespace:SemesterProject2.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SemesterProject2.Views.OilBoilerView"
+             x:DataType="vm:OilBoilerViewModel">
+
+<Panel>
+  <TextBlock HorizontalAlignment="Center"
+             VerticalAlignment="Top"
+             Margin="5"
+             FontSize="18">
+             Oil Boiler:
+  </TextBlock>
+  <Button HorizontalAlignment="Left"
+          VerticalAlignment="Bottom"
+          x:CompileBindings="False"
+          Command="{Binding $parent[Window].DataContext.HeatingUnits}">
+          Go Back
+  </Button>
+  <Image HorizontalAlignment="Right" 
+         VerticalAlignment="Center" 
+         Margin="50" Height="300" Width="300" 
+         Source="/Assets/OilBoiler.png"/>
+</Panel>
+
+</UserControl>
