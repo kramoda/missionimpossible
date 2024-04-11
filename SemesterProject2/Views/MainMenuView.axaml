@@ -15,7 +15,10 @@
                 FontSize="16">
                 Main Menu
     </TextBlock>
-    <Button Content="Heating Units" />
+    <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.HeatingUnits}">
+            Heating Units
+    </Button>
     <Button Content="Heat Demand" />
     <Button Content="Electricity Prices" />
   </StackPanel>

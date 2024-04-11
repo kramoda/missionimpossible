@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SemesterProject2.ViewModels"
+             xmlns:views="clr-namespace:SemesterProject2.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SemesterProject2.Views.HeatingUnitsView"
+             x:DataType="vm:HeatingUnitsViewModel">
+
+  <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Spacing="25">
+    <TextBlock Margin="5"
+                FontSize="16">
+                Heating Units
+    </TextBlock>
+    <Button x:CompileBindings="False"
+            Command="{Binding $parent[Window].DataContext.ElectricBoiler}">
+            Electric Boiler
+    </Button>
+    <Button x:CompileBindings="False"
+            Command="{Binding $parent[Window].DataContext.GasBoiler}">
+            Gas Boiler
+    </Button>
+    <Button x:CompileBindings="False"
+            Command="{Binding $parent[Window].DataContext.GasMotor}">
+            GasMotor
+    </Button>
+    <Button x:CompileBindings="False"
+            Command="{Binding $parent[Window].DataContext.OilBoiler}">
+            Oil Boiler
+    </Button>
+    <Button x:CompileBindings="False"
+            Command="{Binding $parent[Window].DataContext.GoBack}">
+            Go Back
+    </Button>
+  </StackPanel>
+</UserControl>

@@ -26,13 +26,42 @@ namespace SemesterProject2.ViewModels
             private set => this.RaiseAndSetIfChanged(ref _contentViewModel, value);
         }
         
-        public void Menu()
+        public MainMenuViewModel mainMenuViewModel = new();
+        public void HeatingUnits()
         {
-            MainMenuViewModel mainMenuViewModel = new();
-            ContentViewModel = mainMenuViewModel;
+           HeatingUnitsViewModel heatingUnitsViewModel = new();
+
+           ContentViewModel = heatingUnitsViewModel;
         }
     
-        
+        public void GoBack()
+        {
+            ContentViewModel = mainMenuViewModel;
+        }
+
+        public void ElectricBoiler()
+        {
+            ElectricBoilerViewModel electricBoilerViewModel = new();
+            ContentViewModel = electricBoilerViewModel;
+        }
+
+        public void GasBoiler()
+        {
+            GasBoilerViewModel gasBoilerViewModel = new();
+            ContentViewModel = gasBoilerViewModel;
+        }
+
+        public void GasMotor()
+        {
+            GasMotorViewModel gasMotorViewModel = new();
+            ContentViewModel = gasMotorViewModel;
+        }
+
+        public void OilBoiler()
+        {
+            OilBoilerViewModel oilBoilerViewModel = new();
+            ContentViewModel = oilBoilerViewModel;
+        }
 
     }
 }
