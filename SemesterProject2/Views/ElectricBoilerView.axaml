@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SemesterProject2.Views.ElectricBoilerView"
              x:DataType="vm:ElectricBoilerViewModel">
-  
+
 <Panel>
   <TextBlock HorizontalAlignment="Center"
              VerticalAlignment="Top"
@@ -15,6 +15,21 @@
              FontSize="18">
              Electric Boiler:
   </TextBlock>
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="20"
+             FontSize="12"
+             Text="{Binding EBoilerMaxHeat}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="35"
+             FontSize="12"
+             Text="{Binding EBoilerPCost}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="50"
+             FontSize="12"
+             Text="{Binding EBoilerMaxElec}" />
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"

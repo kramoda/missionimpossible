@@ -15,6 +15,31 @@
              FontSize="18">
              Gas Motor:
   </TextBlock>
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="20"
+             FontSize="12"
+             Text="{Binding GMotorMaxHeat}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="35"
+             FontSize="12"
+             Text="{Binding GMotorPCost}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="50"
+             FontSize="12"
+             Text="{Binding GMotorEmission}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="65"
+             FontSize="12"
+             Text="{Binding GMotorGConsumption}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="80"
+             FontSize="12"
+             Text="{Binding GMotorMaxElec}" />
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"

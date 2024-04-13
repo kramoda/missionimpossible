@@ -15,6 +15,26 @@
              FontSize="18">
              Oil Boiler:
   </TextBlock>
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="20"
+             FontSize="12"
+             Text="{Binding OBoilerMaxHeat}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="35"
+             FontSize="12"
+             Text="{Binding OBoilerPCost}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="50"
+             FontSize="12"
+             Text="{Binding OBoilerEmission}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="65"
+             FontSize="12"
+             Text="{Binding OBoilerGConsumption}" />
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"

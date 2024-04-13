@@ -15,6 +15,26 @@
              FontSize="18">
              Gas Boiler:
   </TextBlock>
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="20"
+             FontSize="12"
+             Text="{Binding GBoilerMaxHeat}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="35"
+             FontSize="12"
+             Text="{Binding GBoilerPCost}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="50"
+             FontSize="12"
+             Text="{Binding GBoilerEmission}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="65"
+             FontSize="12"
+             Text="{Binding GBoilerGConsumption}" />
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"
