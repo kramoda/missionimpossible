@@ -13,15 +13,15 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SemesterProject2
-build_property.ProjectDir = E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\
+build_property.ProjectDir = C:\Users\eveli\OneDrive\Dokumentai\GitHub\missionimpossible\SemesterProject2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/App.axaml]
+[C:/Users/eveli/OneDrive/Dokumentai/GitHub/missionimpossible/SemesterProject2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
+[C:/Users/eveli/OneDrive/Dokumentai/GitHub/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
+[C:/Users/eveli/OneDrive/Dokumentai/GitHub/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
