@@ -4580,31 +4580,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Natasja\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pavli\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+      "projectUniqueName": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
       "projectName": "SemesterProject2",
-      "projectPath": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
-      "packagesPath": "C:\\Users\\Natasja\\.nuget\\packages\\",
-      "outputPath": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\obj\\",
+      "projectPath": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+      "packagesPath": "C:\\Users\\pavli\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Natasja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\pavli\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4669,7 +4662,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
