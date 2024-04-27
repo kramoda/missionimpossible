@@ -9,7 +9,6 @@ namespace TheOilBoiler
         public int ProductionCost = 700; 
         public int Emission = 265; 
         public double GasConsumption = 1.2; 
-        
 
         /*
         public override void DisplayName()

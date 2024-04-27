@@ -11,10 +11,30 @@
 <Panel>
   <TextBlock HorizontalAlignment="Center"
              VerticalAlignment="Top"
-             Margin="5"
-             FontSize="18">
+             Margin="15"
+             FontSize="24">
              Gas Boiler:
   </TextBlock>
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="40,280,0,10"
+             FontSize="18"
+             Text="{Binding GBoilerMaxHeat}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="40,310,0,10"
+             FontSize="18"
+             Text="{Binding GBoilerPCost}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="40,340,0,10"
+             FontSize="18"
+             Text="{Binding GBoilerEmission}" />
+  <TextBlock HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="40,370,0,10"
+             FontSize="18"
+             Text="{Binding GBoilerGConsumption}" />
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"
