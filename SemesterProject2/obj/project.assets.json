@@ -4580,23 +4580,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cynde\\.nuget\\packages\\": {},
+    "C:\\Users\\Natasja\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cynde\\Desktop\\SemesterProject2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+      "projectUniqueName": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
       "projectName": "SemesterProject2",
-      "projectPath": "C:\\Users\\cynde\\Desktop\\SemesterProject2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
-      "packagesPath": "C:\\Users\\cynde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cynde\\Desktop\\SemesterProject2\\missionimpossible\\SemesterProject2\\obj\\",
+      "projectPath": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+      "packagesPath": "C:\\Users\\Natasja\\.nuget\\packages\\",
+      "outputPath": "E:\\Programming things\\Semester project 2\\missionimpossible\\SemesterProject2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\cynde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Natasja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4669,7 +4669,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

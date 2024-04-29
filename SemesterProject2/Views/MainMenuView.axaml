@@ -20,7 +20,10 @@
             Heating Units
     </Button>
     <Button Content="Heat Demand" />
-    <Button Content="Electricity Prices" />
+    <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.ElectricityPrices}">
+            Electricity Prices
+    </Button>
   </StackPanel>
 
   
