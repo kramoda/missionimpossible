@@ -72,6 +72,10 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.0.10, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[32.0.1, )"
             }
           },
           "imports": [

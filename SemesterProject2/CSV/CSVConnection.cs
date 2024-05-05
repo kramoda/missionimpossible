@@ -1,7 +1,11 @@
 using System.Data;
 using System.Text;
 using System.IO;
-
+using CsvHelper;
+using System.Globalization;
+using System.Linq;
+using CsvHelper.Configuration;
+using System;
 
 namespace CSVConnection
 {
@@ -10,6 +14,7 @@ namespace CSVConnection
         //string filepath = @"SemesterProject2/CSV\2024HeatProductionOptimizationSummer.csv";
         //string filepath2 = @"SemesterProject2/CSV\2024HeatProductionOptimizationWinter.csv";
 
+        /*
         public DataTable CSVDatatable(string filePath)
         {
             string[] rows = File.ReadAllLines(filePath);
@@ -33,6 +38,8 @@ namespace CSVConnection
 
             return dTableData;
         }
-       
+        */
+            
+            
     }
 }
