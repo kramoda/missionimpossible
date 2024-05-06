@@ -66,7 +66,7 @@ namespace SemesterProject2.ViewModels
             _ePrices = new List<double>();
             
             string fileName = "2024HeatProductionOptimizationWinter.csv";
-            string path = Path.Combine(Environment.CurrentDirectory, fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, "CSV", fileName);
 
             using (var streamReader = new StreamReader(path))
             {

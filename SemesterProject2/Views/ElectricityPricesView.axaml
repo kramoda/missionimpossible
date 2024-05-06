@@ -36,9 +36,9 @@
                     <TextBlock Text="Binding TimeWi"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        </ItemsControl>-->
 
-        <ListBox ItemsSource="{Binding EPrices}"/> -->
+        <ListBox ItemsSource="{Binding EPrices}"/>
 
         <Button HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
