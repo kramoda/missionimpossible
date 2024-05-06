@@ -60,10 +60,18 @@ namespace SemesterProject2.ViewModels
             get => _ePrices;
             set => this.RaiseAndSetIfChanged(ref _ePrices, value);
         }
+
+        private List<string?> _timeFromWi;
+        public List<string?> TimeFromWi
+        {
+            get => _timeFromWi;
+            set => this.RaiseAndSetIfChanged(ref _timeFromWi, value);
+        }
       
         public ElectricityPricesViewModel()
         {
             _ePrices = new List<double>();
+            _timeFromWi = new List<string?>();
             
             string fileName = "2024HeatProductionOptimizationWinter.csv";
             string path = Path.Combine(Environment.CurrentDirectory, "CSV", fileName);
@@ -77,6 +85,7 @@ namespace SemesterProject2.ViewModels
                     foreach (var record in records)
                     {
                         _ePrices.Add(record.ElectricityPrice);
+                        _timeFromWi.Add(record.TimeFrom);
                     }
                     
                     
@@ -84,6 +93,8 @@ namespace SemesterProject2.ViewModels
               
             }
             EPrices = _ePrices;
+            TimeFromWi = _timeFromWi;
+
             
 
 

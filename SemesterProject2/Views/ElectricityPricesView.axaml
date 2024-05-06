@@ -10,6 +10,26 @@
 
 
     <Panel>    
+        <TextBlock  HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="15"
+                    FontSize="24">
+                    Electricity Prices
+        </TextBlock>
+       
+        <ListBox Margin="440,150,0,10"
+                Width="200" 
+                ItemsSource="{Binding EPrices}"/>
+        <ListBox Margin="40,150,0,10"
+                Width="200"
+                ItemsSource="{Binding TimeFromWi}"/>
+
+        <Button HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                x:CompileBindings="False"
+                Command="{Binding $parent[Window].DataContext.GoBack}">
+                Go Back
+        </Button>
         <!--<DataGrid Margin="20" ItemsSource="{WiGridData}"
                 IsReadOnly="True"
                 GridLinesVisibility="All"
@@ -38,14 +58,6 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>-->
 
-        <ListBox ItemsSource="{Binding EPrices}"/>
-
-        <Button HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                x:CompileBindings="False"
-                Command="{Binding $parent[Window].DataContext.GoBack}">
-                Go Back
-        </Button>
 </Panel>
 
 </UserControl>
