@@ -69,5 +69,11 @@ namespace SemesterProject2.ViewModels
             ContentViewModel = electricityPricesViewModel;
         }
 
+        public void HeatDemand()
+        {
+            HeatDemandViewModel heatDemandViewModel = new();
+            ContentViewModel = heatDemandViewModel;
+        }
+
     }
 }
