@@ -131,3 +131,8 @@ E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\obj\
 E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\obj\Debug\net8.0\SemesterProject2.genruntimeconfig.cache
 E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\obj\Debug\net8.0\ref\SemesterProject2.dll
 E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\CsvHelper.dll
+E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\CommunityToolkit.Mvvm.dll
+E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\LiveChartsCore.dll
+E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.dll
+E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
+E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\bin\Debug\net8.0\SkiaSharp.HarfBuzz.dll

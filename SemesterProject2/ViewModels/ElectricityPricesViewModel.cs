@@ -20,6 +20,12 @@ using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using System.Reactive.Linq;
 using System.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView.VisualElements;
+using SkiaSharp;
 
 namespace SemesterProject2.ViewModels
 {
@@ -41,6 +47,7 @@ namespace SemesterProject2.ViewModels
             public double EPricesSu {get; set;}
             public string? TimeSu {get; set;}
         }
+        
 
         /*
         public List<object> _WiGridData;
@@ -54,12 +61,12 @@ namespace SemesterProject2.ViewModels
         //DKK local time,DKK local time,MWh,DKK / Mwh(el)
 
         private List<double> _ePrices;
-
         public List<double> EPrices
         {
             get => _ePrices;
             set => this.RaiseAndSetIfChanged(ref _ePrices, value);
         }
+        
 
         private List<string?> _timeFromWi;
         public List<string?> TimeFromWi
@@ -67,6 +74,21 @@ namespace SemesterProject2.ViewModels
             get => _timeFromWi;
             set => this.RaiseAndSetIfChanged(ref _timeFromWi, value);
         }
+
+       
+
+        public LabelVisual ElectricityPrices { get; set; } =
+        new LabelVisual
+        {
+            Text = "Electricity Prices",
+            TextSize = 25,
+            Padding = new LiveChartsCore.Drawing.Padding(15),
+            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
+        };
+        public List<ISeries> Series { get; set; } = new();
+        public object Sync { get; } = new();
+        
+        
       
         public ElectricityPricesViewModel()
         {
@@ -94,6 +116,18 @@ namespace SemesterProject2.ViewModels
             }
             EPrices = _ePrices;
             TimeFromWi = _timeFromWi;
+
+            Series.Add(new LineSeries<double>
+            {
+                Values = EPrices,
+                Fill = null,
+            });
+
+            lock (Sync)
+            {
+                EPrices.Add(1D);
+                EPrices.Add(2D);
+            }
 
             
 
