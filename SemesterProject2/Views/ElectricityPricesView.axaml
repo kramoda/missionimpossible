@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SemesterProject2.ViewModels"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:views="clr-namespace:SemesterProject2.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SemesterProject2.Views.ElectricityPricesView"
+             x:DataType="vm:ElectricityPricesViewModel">
+
+    
+    <Panel>    
+        <TextBlock  HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="5"
+                    FontSize="24">
+                    Electricity Prices
+        </TextBlock>
+       
+        <lvc:CartesianChart
+        Margin="10,35,680,25"
+        Series="{Binding SeriesWi}"
+        XAxes="{Binding XAxesWi}"
+        YAxes="{Binding YAxesWi}"
+        Title="{Binding ElectricityPricesWi}"
+        ZoomMode="X">
+        </lvc:CartesianChart>
+
+        <lvc:CartesianChart
+        Margin="680,35,0,25"
+        Series="{Binding SeriesSu}"
+        XAxes="{Binding XAxesSu}"
+        YAxes="{Binding YAxesSu}"
+        Title="{Binding ElectricityPricesSu}"
+        ZoomMode="X">
+        </lvc:CartesianChart>
+
+       <!--
+        <ListBox Margin="440,150,0,10"
+                Width="200" 
+                ItemsSource="{Binding EPrices}"/>
+        <ListBox Margin="40,150,0,10"
+                Width="200"
+                ItemsSource="{Binding TimeFromWi}"/>
+        -->
+
+        <Button HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                x:CompileBindings="False"
+                Command="{Binding $parent[Window].DataContext.GoBack}">
+                Go Back
+        </Button>
+        <!--<DataGrid Margin="20" ItemsSource="{WiGridData}"
+                IsReadOnly="True"
+                GridLinesVisibility="All"
+                BorderThickness="1"
+                BorderBrush="Gray">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Local Time" Width="*"
+                    Binding="{Binding TimeWi}"/>
+                <DataGridTextColumn Header="Electricity Price" Width="*"
+                    Binding="{Binding EPricesWi}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    
+        <ItemsControl Items="{Binding EPrices}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Binding EPricesWi"/>
+                    <TextBlock Text="Binding TimeWi"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>-->
+
+</Panel>
+
+</UserControl>
