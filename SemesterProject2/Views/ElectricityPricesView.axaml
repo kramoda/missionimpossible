@@ -11,19 +11,29 @@
 
     
     <Panel>    
-        <!--
         <TextBlock  HorizontalAlignment="Center"
                     VerticalAlignment="Top"
-                    Margin="15"
+                    Margin="5"
                     FontSize="24">
                     Electricity Prices
         </TextBlock>
-        -->
        
         <lvc:CartesianChart
-        Margin="20"
-        Series="{Binding Series}"
-        Title="{Binding ElectricityPrices}">
+        Margin="10,35,680,25"
+        Series="{Binding SeriesWi}"
+        XAxes="{Binding XAxesWi}"
+        YAxes="{Binding YAxesWi}"
+        Title="{Binding ElectricityPricesWi}"
+        ZoomMode="X">
+        </lvc:CartesianChart>
+
+        <lvc:CartesianChart
+        Margin="680,35,0,25"
+        Series="{Binding SeriesSu}"
+        XAxes="{Binding XAxesSu}"
+        YAxes="{Binding YAxesSu}"
+        Title="{Binding ElectricityPricesSu}"
+        ZoomMode="X">
         </lvc:CartesianChart>
 
        <!--
