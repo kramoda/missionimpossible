@@ -28,7 +28,7 @@
         </lvc:CartesianChart>
 
         <lvc:CartesianChart
-        Margin="680,35,0,25"
+        Margin="680,35,10,25"
         Series="{Binding SeriesSu}"
         XAxes="{Binding XAxesSu}"
         YAxes="{Binding YAxesSu}"

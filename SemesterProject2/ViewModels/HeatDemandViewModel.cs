@@ -1,56 +1,57 @@
 using ReactiveUI;
+using SemesterProject2.ViewModels;
+using System.Reactive;
+using CSVConnection;
+using System.Data;
 using System;
+using System.Collections.ObjectModel;
+using Avalonia.Markup.Xaml.Templates;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using Avalonia.Controls;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using DynamicData.Binding;
+using System.Text;
 using System.IO;
 using CsvHelper;
 using System.Globalization;
+using System.Linq;
+using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using System.Reactive.Linq;
+using System.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
+using Microsoft.VisualBasic;
 
 namespace SemesterProject2.ViewModels
 {
-    public class ElectricityPricesViewModel : ViewModelBase
+    public class HeatDemandViewModel : ViewModelBase
     {
-        
-        //public ObservableCollection<EPriceDataWinter> WiGridData {get;} = new();
-        
-        public class EPriceDataWinter()
+        public class HDemandDataWinter()
         {
-            public double EPricesWi {get; set;}
+            public double HDemandWi {get; set;}
             public string? TimeWi {get; set;}
 
 
         }
 
-        public class EPriceDataSummer
+        public class HDemandDataSummer
         {
-            public double EPricesSu {get; set;}
+            public double HDemandSu {get; set;}
             public string? TimeSu {get; set;}
         }
-        
 
-        /*
-        public List<object> _WiGridData;
-        List<object> WiGridData
+        private List<double> _hDemandWi;
+        public List<double> HDemandWi
         {
-            get => _WiGridData;
-            set => this.RaiseAndSetIfChanged(ref _WiGridData, value);
+            get => _hDemandWi;
+            set => this.RaiseAndSetIfChanged(ref _hDemandWi, value);
         }
-        */
-
-        //DKK local time,DKK local time,MWh,DKK / Mwh(el)
-
-        private List<double> _ePricesWi;
-        public List<double> EPricesWi
-        {
-            get => _ePricesWi;
-            set => this.RaiseAndSetIfChanged(ref _ePricesWi, value);
-        }
-        
 
         private List<string> _timeFromWi;
         public List<string> TimeFromWi
@@ -59,11 +60,11 @@ namespace SemesterProject2.ViewModels
             set => this.RaiseAndSetIfChanged(ref _timeFromWi, value);
         }
 
-        private List<double> _ePricesSu;
-        public List<double> EPricesSu
+        private List<double> _hDemandSu;
+        public List<double> HDemandSu
         {
-            get => _ePricesSu;
-            set => this.RaiseAndSetIfChanged(ref _ePricesSu, value);
+            get => _hDemandSu;
+            set => this.RaiseAndSetIfChanged(ref _hDemandSu, value);
         }
 
         private List<string> _timeFromSu;
@@ -73,8 +74,7 @@ namespace SemesterProject2.ViewModels
             set => this.RaiseAndSetIfChanged(ref _timeFromSu, value);
         }
 
-
-        public LabelVisual ElectricityPricesWi { get; set; } =
+        public LabelVisual HeatDemandWi { get; set; } =
         new LabelVisual
         {
             Text = "Winter",
@@ -83,7 +83,7 @@ namespace SemesterProject2.ViewModels
             Paint = new SolidColorPaint(SKColors.DarkSlateGray)
         };
 
-        public LabelVisual ElectricityPricesSu { get; set; } =
+        public LabelVisual HeatDemandSu { get; set; } =
         new LabelVisual
         {
             Text = "Summer",
@@ -99,13 +99,10 @@ namespace SemesterProject2.ViewModels
         public List<Axis> XAxesSu { get; set; } = new();
         public List<Axis> YAxesWi { get; set; } = new();
         public List<Axis> YAxesSu { get; set; } = new();
-        
-        
-        
-      
-        public ElectricityPricesViewModel()
+
+        public HeatDemandViewModel()
         {
-            _ePricesWi = new List<double>();
+            _hDemandWi = new List<double>();
             _timeFromWi = new List<string>();
             
             string fileName = "2024HeatProductionOptimizationWinter.csv";
@@ -119,16 +116,15 @@ namespace SemesterProject2.ViewModels
                     
                     foreach (var record in records)
                     {
-                        _ePricesWi.Add(record.ElectricityPrice);
+                        _hDemandWi.Add(record.HeatDemand);
                         _timeFromWi.Add(record.TimeFrom);
                     }
                 }
             }
-            EPricesWi = _ePricesWi;
+            HDemandWi = _hDemandWi;
             TimeFromWi = _timeFromWi;
 
-
-            _ePricesSu = new List<double>();
+            _hDemandSu = new List<double>();
             _timeFromSu = new List<string>();
             
             string fileName2 = "2024HeatProductionOptimizationSummer.csv";
@@ -142,17 +138,17 @@ namespace SemesterProject2.ViewModels
                     
                     foreach (var record in records)
                     {
-                        _ePricesSu.Add(record.ElectricityPrice);
+                        _hDemandSu.Add(record.HeatDemand);
                         _timeFromSu.Add(record.TimeFrom);
                     } 
                 }
             }
-            EPricesSu = _ePricesSu;
+            HDemandSu = _hDemandSu;
             TimeFromSu = _timeFromSu;
 
             SeriesWi.Add(new LineSeries<double>
             {
-                Values = EPricesWi,
+                Values = HDemandWi,
                 Fill = null,
                 GeometryFill = null,
                 GeometryStroke = null
@@ -161,13 +157,13 @@ namespace SemesterProject2.ViewModels
 
             lock (Sync)
             {
-                EPricesWi.Add(1D);
-                EPricesWi.Add(2D);
+                HDemandWi.Add(1D);
+                HDemandWi.Add(2D);
             }
 
             SeriesSu.Add(new LineSeries<double>
             {
-                Values = EPricesSu,
+                Values = HDemandSu,
                 Stroke = new SolidColorPaint(SKColors.LightCoral) { StrokeThickness = 4 },
                 Fill = null,
                 GeometryFill = null,
@@ -176,8 +172,8 @@ namespace SemesterProject2.ViewModels
 
             lock (Sync)
             {
-                EPricesSu.Add(1D);
-                EPricesSu.Add(2D);
+                HDemandSu.Add(1D);
+                HDemandSu.Add(2D);
             }
 
             XAxesWi = new List<Axis>
@@ -204,7 +200,7 @@ namespace SemesterProject2.ViewModels
             {
                 new Axis
                 {
-                    Name = "DKK / Mwh(el)",
+                    Name = "MWh",
                     NameTextSize = 12,
                 }
             };
@@ -213,116 +209,24 @@ namespace SemesterProject2.ViewModels
             {
                 new Axis
                 {
-                    Name = "DKK / Mwh(el)",
+                    Name = "MWh",
                     NameTextSize = 12,
                 }
             };
 
-
-            /*
-           _WiGridData = new List<object>();
-           _WiGridData.Add("1");
-            */
-            /*
-            CSVConnect obj = new CSVConnect();
-            DataTable WinterData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationWinter.csv");
-            
-            var tempList = new List<object>();
-
-            foreach (DataRow row in WinterData.Rows)
-            {
-                var temp = new EPriceDataWinter();
-                temp.TimeWi = row["Time from"].ToString();
-                temp.EPricesWi = double.Parse(row["Electricity Price"].ToString()!);
-                WiGridData.Add(temp);
-            }
-            */
-
-            //WiGridData = tempList;
-            /*
-            CSVConnect obj2 = new CSVConnect();
-            DataTable SummerData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationSummer.csv");
-        
-            var tempList2 = new List<object>();
-
-            foreach (DataRow row in SummerData.Rows)
-            {
-                var temp = new EPriceDataSummer();
-                temp.TimeSu = row["Time from"].ToString();
-                temp.EPricesSu = double.Parse(row["Electricity Price"].ToString()!);
-                tempList2.Add(temp);
-
-            }
-
-            SuGridData = tempList2;
-            */
-
         }
+
         public class HeatProductionData
         {
             [Name("Time from")]
             public string TimeFrom { get; set; } = string.Empty;
             [Name("Time to")]
-            public string? TimeTo { get; set; }
+            public string? TimeTo { get; set; } 
             [Name("Heat Demand")]
             public double HeatDemand { get; set; }
             [Name("Electricity Price")]
             public double ElectricityPrice  { get; set; }
         }
-        
-        
-        /*
-        public List<object> _SuGridData;
-        List<object> SuGridData
-        {
-            get => _SuGridData;
-            set => this.RaiseAndSetIfChanged(ref _SuGridData, value);
-        }
-        */
 
-     /*
-        static void WinterDataTable(string[] args, List<object> WiGridData)
-        {
-        
-            CSVConnect obj = new CSVConnect();
-            DataTable WinterData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationWinter.csv");
-            
-            var tempList = new List<object>();
-
-            foreach (DataRow row in WinterData.Rows)
-            {
-                var temp = new EPriceDataWinter();
-                temp.TimeWi = row["DKK local time"].ToString();
-                temp.EPricesWi = double.Parse(row["DKK / Mwh(el)"].ToString()!);
-                tempList.Add(temp);
-            }
-
-            WiGridData = tempList;
-        }
-     */
-        
-
-     /*
-        static void SummerDataTable(string[] args, List<object> SuGridData)
-        {
-        CSVConnect obj = new CSVConnect();
-        DataTable SummerData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationSummer.csv");
-        
-        var tempList = new List<object>();
-
-            foreach (DataRow row in SummerData.Rows)
-            {
-                var temp = new EPriceDataSummer();
-                temp.TimeSu = row["DKK local time"].ToString();
-                temp.EPricesSu = double.Parse(row["DKK / Mwh(el)"].ToString()!);
-                tempList.Add(temp);
-
-            }
-
-            SuGridData = tempList;
-        
-        }
-     */
     }
-
 }

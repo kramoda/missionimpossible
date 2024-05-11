@@ -19,7 +19,10 @@
             Command="{Binding $parent[Window].DataContext.HeatingUnits}">
             Heating Units
     </Button>
-    <Button Content="Heat Demand" />
+    <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.HeatDemand}">
+            Heat Demand
+    </Button>
     <Button x:CompileBindings="False" 
             Command="{Binding $parent[Window].DataContext.ElectricityPrices}">
             Electricity Prices
