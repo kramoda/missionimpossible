@@ -94,13 +94,10 @@ namespace SemesterProject2.ViewModels
 
         public List<ISeries> SeriesWi { get; set; } = new();
         public List<ISeries> SeriesSu { get; set; } = new();  
-        public object Sync { get; } = new();
         public List<Axis> XAxesWi { get; set; } = new();
         public List<Axis> XAxesSu { get; set; } = new();
         public List<Axis> YAxesWi { get; set; } = new();
         public List<Axis> YAxesSu { get; set; } = new();
-        
-        
         
       
         public ElectricityPricesViewModel()
@@ -159,12 +156,6 @@ namespace SemesterProject2.ViewModels
                 
             });
 
-            lock (Sync)
-            {
-                EPricesWi.Add(1D);
-                EPricesWi.Add(2D);
-            }
-
             SeriesSu.Add(new LineSeries<double>
             {
                 Values = EPricesSu,
@@ -173,12 +164,6 @@ namespace SemesterProject2.ViewModels
                 GeometryFill = null,
                 GeometryStroke = null
             });
-
-            lock (Sync)
-            {
-                EPricesSu.Add(1D);
-                EPricesSu.Add(2D);
-            }
 
             XAxesWi = new List<Axis>
             {

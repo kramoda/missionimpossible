@@ -27,6 +27,8 @@
             Command="{Binding $parent[Window].DataContext.ElectricityPrices}">
             Electricity Prices
     </Button>
+    <Button>Result Data Manager</Button>
+    <Button>Optimizer</Button>
   </StackPanel>
 
   

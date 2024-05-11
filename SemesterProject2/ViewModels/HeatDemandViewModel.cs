@@ -94,7 +94,6 @@ namespace SemesterProject2.ViewModels
 
         public List<ISeries> SeriesWi { get; set; } = new();
         public List<ISeries> SeriesSu { get; set; } = new();  
-        public object Sync { get; } = new();
         public List<Axis> XAxesWi { get; set; } = new();
         public List<Axis> XAxesSu { get; set; } = new();
         public List<Axis> YAxesWi { get; set; } = new();
@@ -155,12 +154,6 @@ namespace SemesterProject2.ViewModels
                 
             });
 
-            lock (Sync)
-            {
-                HDemandWi.Add(1D);
-                HDemandWi.Add(2D);
-            }
-
             SeriesSu.Add(new LineSeries<double>
             {
                 Values = HDemandSu,
@@ -169,13 +162,7 @@ namespace SemesterProject2.ViewModels
                 GeometryFill = null,
                 GeometryStroke = null
             });
-
-            lock (Sync)
-            {
-                HDemandSu.Add(1D);
-                HDemandSu.Add(2D);
-            }
-
+        
             XAxesWi = new List<Axis>
             {
                 new Axis
