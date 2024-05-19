@@ -63,5 +63,29 @@ namespace SemesterProject2.ViewModels
             ContentViewModel = oilBoilerViewModel;
         }
 
+        public void ElectricityPrices()
+        {
+            ElectricityPricesViewModel electricityPricesViewModel = new();
+            ContentViewModel = electricityPricesViewModel;
+        }
+
+        public void HeatDemand()
+        {
+            HeatDemandViewModel heatDemandViewModel = new();
+            ContentViewModel = heatDemandViewModel;
+        }
+
+        public void Scenario1()
+        {
+            Scenario1ViewModel scenario1ViewModel = new();
+            ContentViewModel = scenario1ViewModel;
+        }
+
+        public void Scenario2()
+        {
+            Scenario2ViewModel scenario2ViewModel = new();
+            ContentViewModel = scenario2ViewModel;
+        }
+
     }
 }

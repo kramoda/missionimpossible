@@ -8,7 +8,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        string csvFilePath = "optimizationinfo.csv";
+        string csvFileName = "optimizationinfo.csv";
+        string csvFilePath = Path.Combine(Enviroment.CurrentDirectory, csvFileName);
         var optimizationInfos = ReadOptimizationInfoFromCsv(csvFilePath);
 
         Console.WriteLine("Winter Period:");

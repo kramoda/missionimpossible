@@ -9,7 +9,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        string csvFilePath = "optimizationinfo.csv";
+        string csvFileName = "optimizationinfo.csv";
+        string csvFilePath = Path.Combine(Environment.CurrentDirectory, csvFileName);
         var demands = ReadHeatDemandFromCsv(csvFilePath);
 
         var winterDemands = new List<HeatDemandRecord>();
