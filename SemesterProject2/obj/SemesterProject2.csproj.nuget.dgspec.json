@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\monic\\OneDrive\\Documentos\\2º semestre\\mission imporsible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj": {}
+    "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\monic\\OneDrive\\Documentos\\2º semestre\\mission imporsible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj": {
+    "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monic\\OneDrive\\Documentos\\2º semestre\\mission imporsible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+        "projectUniqueName": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
         "projectName": "SemesterProject2",
-        "projectPath": "C:\\Users\\monic\\OneDrive\\Documentos\\2º semestre\\mission imporsible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
-        "packagesPath": "C:\\Users\\monic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monic\\OneDrive\\Documentos\\2º semestre\\mission imporsible\\missionimpossible\\SemesterProject2\\obj\\",
+        "projectPath": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\SemesterProject2.csproj",
+        "packagesPath": "C:\\Users\\pavli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pavli\\Desktop\\missionimpossible\\missionimpossible\\SemesterProject2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\monic\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pavli\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
