@@ -2,95 +2,128 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-public class HeatDemand
-{
-    public DateTime Time { get; set; }
-    public double Demand { get; set; }
-}
-public abstract class ProducedHeat
-{
-    public abstract double Potence { get; }
-    public abstract Co2Emission { get; }
-    public abstract void DisplayHeatProduction();
-}
-public class GasBoiler : ProducedHeat
-{
-    public override double Potence => 1.0;
-    public override double Co2Emission => 0.2;
-    public override void DisplayHeatProduction()
-    {
-        Console.Writeline("The gas boiler is producing heat at it's maximun potence.");
-    }
-}
-public class OilBoiler : PtoducedHeat
-{
-    public override double Ptotence => 0.5;
-    public override double Co2Emission => 0.3;
-    public override void DisplayHeatProduction()
-    { 
-        Console.Writeline("The oil boiler is producing heat at half of its potence.");
-    }
-}
 public class HeatProduction
 {
-    {
     private List<HeatDemand> _heatDemands;
     private GasBoiler _gasBoiler;
     private OilBoiler _oilBoiler;
-    public heatProduction(List<HeatDemand> heatDemands, GasBoiler gasBoiler, OilBoiler oilBoiler)
+
+    public HeatProduction(List<HeatDemand> heatDemands, GasBoiler gasBoiler, OilBoiler oilBoiler)
     {
         _heatDemands = heatDemands;
         _gasBoiler = gasBoiler;
         _oilBoiler = oilBoiler;
     }
-}
-public void ProducedHeat()
-{
-    double totalCo2Emission = 0
-    foreach(var heatDemand in _heatDemands)
+
+    public void ProduceHeat()
     {
-        if(heatDemand.Time >= new DateTime(2023, 3, 15, 6, 3, 0) && heatDemand.Time <new DateTime(2023, 3, 15, 7, 0, 0) )
-        {
-            double heatProduction = heatDemand.Demand * (_gasBoiler.Potence + _oilBoiler.Potence / 2);
-            Console.Writeline($"At{heatDemand.Time}, the heat demand is {heatDemand.Demand}. The heat production is {heatProduction}.");
-            _gasBoiler.DisplayHeatProduction();
-            _oilBoiler.DisplayHeatProduction();
-            totalCo2Emission += heatProduction * _gasboiler.Co2Emission + heatProduction * _oilBoiler.Co2Emission/2;
-        }
-        else if (heatDemand.Time >= new DateTime(2023, 3, 15, 7, 0, 0) && heatDemand.Time <new DateTime(2023, 3, 15, 8, 51, 0))
-        {
-            double heatProduction =heatDemand.Demand * (_gasBoiler.Potence + _oilBoiler.Potence);
-            Console.Writeline($"At{heatDemand.Time}, the heat demand is {heatDemand.Demand}. The heat production is {heatProduction}.");
-            _gasBoiler.DisplayHeatProduction();
-            _oilBoiler.DisplayHeatProduction();
-            totalCo2Emission += heatProduction * _gasBoiler.Co2Emission + heatProduction *_oilBoiler.Co2Emission;
-        }
-        else
-        {
-            Console.Writeline($"At {heatDemand.Time}, the heat demand is {heatDemand.Demand}. No heat production.");
+        double totalHeatDemand = 0;
+        double totalCO2Emissions = 0;
+        double totalHeatProduced = 0;
+        double totalProductionCost = 0;
 
+        foreach (HeatDemand heatDemand in _heatDemands)
+        {
+            bool isWinter = heatDemand.Time.Month < 4 || heatDemand.Time.Month > 9;
+            double heatProduced = 0;
+            double co2Emissions = 0;
+            double productionCost = 0;
 
+            if (isWinter)
+            {
+                // Calcular producción de calor para invierno
+                double gasHeat = _gasBoiler.ProduceHeat(heatDemand.Demand);
+                double oilHeat = _oilBoiler.ProduceHeat(heatDemand.Demand);
+
+                heatProduced = gasHeat + oilHeat;
+                co2Emissions = _gasBoiler.GetCO2Emissions(gasHeat) + _oilBoiler.GetCO2Emissions(oilHeat);
+                productionCost = _gasBoiler.GetProductionCost(gasHeat) + _oilBoiler.GetProductionCost(oilHeat);
+            }
+            else (isSummer)
+            {
+                // Calcular producción de calor para verano
+                heatProduced = _gasBoiler.ProduceHeat(heatDemand.Demand);
+                co2Emissions = _gasBoiler.GetCO2Emissions(heatDemand.Demand);
+                productionCost = _gasBoiler.GetProductionCost(heatDemand.Demand);
+            }
+
+            totalHeatDemand += heatDemand.Demand;
+            totalHeatProduced += heatProduced;
+            totalCO2Emissions += co2Emissions;
+            totalProductionCost += productionCost;
         }
+
+        Console.WriteLine($"Total Heat Demand: {totalHeatDemand} kWh");
+        Console.WriteLine($"Total Heat Produced: {totalHeatProduced} kWh");
+        Console.WriteLine($"Total CO2 Emissions: {totalCO2Emissions} kg");
+        Console.WriteLine($"Total Production Cost: {totalProductionCost} DKK");
     }
-    Console.WriteLine($"Total CO2 emission: {totalCo2Emission} kg");
- }
 }
+
+public class HeatDemand
+{
+    public DateTime Time { get; set; }
+    public double Demand { get; set; }
+}
+
+public class GasBoiler
+{
+    public double ProduceHeat(double heatDemand)
+    {
+        return heatDemand;
+    }
+
+    public double GetCO2Emissions(double heatDemand)
+    {
+        return heatDemand * 0.2; // Asumir 0.2 kg CO2/kWh
+    }
+
+    public double GetProductionCost(double heatDemand)
+    {
+        return heatDemand * 500; // 500 DKK/kWh
+    }
+}
+
+public class OilBoiler
+{
+    public double ProduceHeat(double heatDemand)
+    {
+        return heatDemand;
+    }
+
+    public double GetCO2Emissions(double heatDemand)
+    {
+        return heatDemand * 0.3; // Asumir 0.3 kg CO2/kWh
+    }
+
+    public double GetProductionCost(double heatDemand)
+    {
+        return heatDemand * 700; // 700 DKK/kWh
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
         List<HeatDemand> heatDemands = new List<HeatDemand>();
-        using (StreamReader sr = new StreamReader("heat_demand.csv"))
+
+        string[] lines = File.ReadAllLines("optimization_info.csv");
+
+        foreach (string line in lines)
         {
-            sr.ReadLine();
-            string line;
-            while ((line = sr.ReadLine()) != null)
+            if (string.IsNullOrWhiteSpace(line)) continue; // Ignorar líneas vacías
+
+            string[] values = line.Split(',');
+            if (values.Length < 3) continue; // Asegurarse de que hay suficientes valores
+
+            if (DateTime.TryParse($"{values[0]} {values[1]}", out DateTime dateTime) && 
+                double.TryParse(values[2], out double demand))
             {
-                string[] values =line.Split(',');
-                HeatDeamand heatDemand = new HeatDemand
+                HeatDemand heatDemand = new HeatDemand
                 {
-                    Time = DateTime.Parse($"{values[0]} {values[1]}"),
-                    Demand = double.Parse(values[2])
+                    Time = dateTime,
+                    Demand = demand
                 };
                 heatDemands.Add(heatDemand);
             }
@@ -99,9 +132,8 @@ class Program
         GasBoiler gasBoiler = new GasBoiler();
         OilBoiler oilBoiler = new OilBoiler();
 
-        heatProduction heatProduction = new heatProduction(heatDemands, gasBoiler, oilBoiler);
+        HeatProduction heatProduction = new HeatProduction(heatDemands, gasBoiler, oilBoiler);
         heatProduction.ProduceHeat();
     }
 }
-
 

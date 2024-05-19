@@ -1,146 +1,142 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+
+public class HeatProduction
+{
+    private List<HeatDemand> _heatDemands;
+    private GasBoiler _gasBoiler;
+    private OilBoiler _oilBoiler;
+    private ElectricBoiler _electricBoiler;
+
+    public HeatProduction(List<HeatDemand> heatDemands, GasBoiler gasBoiler, OilBoiler oilBoiler, ElectricBoiler electricBoiler)
+    {
+        _heatDemands = heatDemands;
+        _gasBoiler = gasBoiler;
+        _oilBoiler = oilBoiler;
+        _electricBoiler = electricBoiler;
+    }
+
+    public void ProduceHeat(double electricityPrice)
+    {
+        double totalHeatDemand = 0;
+        double totalCO2Emissions = 0;
+        double totalHeatProduced = 0;
+        double totalProductionCost = 0;
+
+        foreach (HeatDemand heatDemand in _heatDemands)
+        {
+            bool isWinter = heatDemand.Time.Month < 4 || heatDemand.Time.Month > 9;
+            double heatProduced = 0;
+            double co2Emissions = 0;
+            double productionCost = 0;
+
+            if (isWinter)
+            {
+                // Both gas and oil boilers are working at max capacity
+                heatProduced += _gasBoiler.ProduceHeat(heatDemand.Demand);
+                heatProduced += _oilBoiler.ProduceHeat(heatDemand.Demand);
+                co2Emissions += _gasBoiler.GetCO2Emissions(heatDemand.Demand);
+                co2Emissions += _oilBoiler.GetCO2Emissions(heatDemand.Demand);
+                productionCost += _gasBoiler.GetProductionCost(heatDemand.Demand);
+                productionCost += _oilBoiler.GetProductionCost(heatDemand.Demand);
+            }
+            else
+            {
+                if (electricityPrice < 500)
+                {
+                    // Electric boiler is working at max capacity
+                    heatProduced += _electricBoiler.ProduceHeat(heatDemand.Demand);
+                    co2Emissions += _electricBoiler.GetCO2Emissions(heatDemand.Demand);
+                    productionCost += _electricBoiler.GetProductionCost(heatDemand.Demand) + electricityPrice * heatDemand.Demand / 1000;
+                }
+                else
+                {
+                    // Only gas boiler is working at max capacity
+                    heatProduced += _gasBoiler.ProduceHeat(heatDemand.Demand);
+                    co2Emissions += _gasBoiler.GetCO2Emissions(heatDemand.Demand);
+                    productionCost += _gasBoiler.GetProductionCost(heatDemand.Demand);
+                }
+            }
+
+            totalHeatDemand += heatDemand.Demand;
+            totalHeatProduced += heatProduced;
+            totalCO2Emissions += co2Emissions;
+            totalProductionCost += productionCost;
+        }
+
+        Console.WriteLine($"Total Heat Demand: {totalHeatDemand} kWh");
+        Console.WriteLine($"Total Heat Produced: {totalHeatProduced} kWh");
+        Console.WriteLine($"Total CO2 Emissions: {totalCO2Emissions} kg");
+        Console.WriteLine($"Total Production Cost: {totalProductionCost} DKK");
+    }
+}
 
 public class HeatDemand
 {
     public DateTime Time { get; set; }
     public double Demand { get; set; }
 }
-public abstract class ProducedHeat
-{
-    public abstract double Potence { get; }
-    public abstract Co2Emission { get; }
-    public abstract void DisplayHeatProduction();
-}
-public class GasBoiler : ProducedHeat
-{
-    public override double Potence => 1.0;
-    public override double Co2Emission => 0.2;
-    public override void DisplayHeatProduction()
-    {
-        Console.Writeline("The gas boiler is producing heat at it's maximun potence.");
-    }
-}
-public class OilBoiler : PtoducedHeat
-{
-    public override double Ptotence => 0.5;
-    public override double Co2Emission => 0.3;
-    public override void DisplayHeatProduction()
-    { 
-        Console.Writeline("The oil boiler is producing heat at half of its potence.");
-    }
-}
-public class HeatProduction
-{
-    {
-    private List<HeatDemand> _heatDemands;
-    private GasBoiler _gasBoiler;
-    private OilBoiler _oilBoiler;
-    public heatProduction(List<HeatDemand> heatDemands, GasBoiler gasBoiler, OilBoiler oilBoiler)
-    {
-        _heatDemands = heatDemands;
-        _gasBoiler = gasBoiler;
-        _oilBoiler = oilBoiler;
-    }
-}
-public void ProducedHeat()
-{
-    double totalCo2Emission = 0
-    foreach(var heatDemand in _heatDemands)
-    {
-        if(heatDemand.Time >= new DateTime(2023, 3, 15, 6, 3, 0) && heatDemand.Time <new DateTime(2023, 3, 15, 7, 0, 0) )
-        {
-            double heatProduction = heatDemand.Demand * (_gasBoiler.Potence + _oilBoiler.Potence / 2);
-            Console.Writeline($"At{heatDemand.Time}, the heat demand is {heatDemand.Demand}. The heat production is {heatProduction}.");
-            _gasBoiler.DisplayHeatProduction();
-            _oilBoiler.DisplayHeatProduction();
-            totalCo2Emission += heatProduction * _gasboiler.Co2Emission + heatProduction * _oilBoiler.Co2Emission/2;
-        }
-        else if (heatDemand.Time >= new DateTime(2023, 3, 15, 7, 0, 0) && heatDemand.Time <new DateTime(2023, 3, 15, 8, 51, 0))
-        {
-            double heatProduction =heatDemand.Demand * (_gasBoiler.Potence + _oilBoiler.Potence);
-            Console.Writeline($"At{heatDemand.Time}, the heat demand is {heatDemand.Demand}. The heat production is {heatProduction}.");
-            _gasBoiler.DisplayHeatProduction();
-            _oilBoiler.DisplayHeatProduction();
-            totalCo2Emission += heatProduction * _gasBoiler.Co2Emission + heatProduction *_oilBoiler.Co2Emission;
-        }
-        else
-        {
-            Console.Writeline($"At {heatDemand.Time}, the heat demand is {heatDemand.Demand}. No heat production.");
 
-
-        }
+public class GasBoiler
+{
+    public double ProduceHeat(double heatDemand)
+    {
+        return heatDemand;
     }
-    Console.WriteLine($"Total CO2 emission: {totalCo2Emission} kg");
- }
+
+    public double GetCO2Emissions(double heatDemand)
+    {
+        return heatDemand * 0.2; // assume 0.2 kg CO2/kWh
+    }
+
+    public double GetProductionCost(double heatDemand)
+    {
+        return heatDemand * 500; // 500 DKK/kWh
+    }
 }
+
+public class OilBoiler
+{
+    public double ProduceHeat(double heatDemand)
+    {
+        return heatDemand;
+    }
+
+    public double GetCO2Emissions(double heatDemand)
+    {
+        return heatDemand * 0.3; // assume 0.3 kg CO2/kWh
+    }
+
+    public double GetProductionCost(double heatDemand)
+    {
+        return heatDemand * 700; // 700 DKK/kWh
+    }
+}
+
+public class ElectricBoiler
+{
+    public double ProduceHeat(double heatDemand)
+    {
+        return heatDemand;
+    }
+
+    public double GetCO2Emissions(double heatDemand)
+    {
+        return heatDemand * 0.1; // assume 0.1 kg CO2/kWh
+    }
+
+    public double GetProductionCost(double heatDemand)
+    {
+        return heatDemand * 50; // 50 DKK/kWh
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
-        List<HeatDemand> heatDemands = new List<HeatDemand>();
-        using (StreamReader sr = new StreamReader("heat_demand.csv"))
-        {
-            sr.ReadLine();
-            string line;
-            while ((line = sr.ReadLine()) != null)
-            {
-                string[] values =line.Split(',');
-                HeatDeamand heatDemand = new HeatDemand
-                {
-                    Time = DateTime.Parse($"{values[0]} {values[1]}"),
-                    Demand = double.Parse(values[2])
-                };
-                heatDemands.Add(heatDemand);
-            }
-        }
-
-        GasBoiler gasBoiler = new GasBoiler();
-        OilBoiler oilBoiler = new OilBoiler();
-
-        heatProduction heatProduction = new heatProduction(heatDemands, gasBoiler, oilBoiler);
-        heatProduction.ProduceHeat();
-    }
-}
-
-class Program
-{
-    static void Main(string [] args)
-    {
-        string [] lines = File.ReadAllLines("prices.csv");
-        int[,] prices = new int[lines.Lenght, 3];
-        for (int i =0; i < lines.Lenght; i)
-        {
-            string [] parts = lines [i].Split(',');
-            prices[i, 0] = int.Parse(parts[0]);
-            prices[i, 1] = int.Parse(parts[1]);
-            prices[1, 2] = int.Parse(parts[2]);
-        }
-    }
-    string ChooseBoiler(int price, int demand, int co2)
-    {
-        if (price <= 500 && demand < 5 )
-        {
-            return "electric boiler at maximun (CO2 emmisions: " + co2 "g/kWh)";
-
-        }
-        else if (demand < 5)
-        {
-            return "gas boiler at maximun (CO2 emisions; " + co2 "g/kWh)";
-
-        }
-        else if (price <= 500)
-        {
-            return "electric boiler at maximun (co2 emmisions: " + co2 "g/kWh)";
-        }
-        else
-        {
-            return "oil boiler at maximun (CO2 emission: " + co2 "g/kWh)";
-        }
-    }
-    for (int i = 0; i < prices.GetLength(0); i++)
-    {
-        Console.WriteLine($"For electricityprice {prices[i,0]} and heat demand {prices[i, 1]}, use {ChooseBoiler(prices[i, 0], prices[i, 1], prices[i, 2])}");
+        List<HeatDemand> heatDemands = new List<
     }
 }
