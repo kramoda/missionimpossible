@@ -33,6 +33,12 @@ namespace SemesterProject2.ViewModels
 
            ContentViewModel = heatingUnitsViewModel;
         }
+        
+        public void HeatingGrid()
+        {
+            HeatingGridViewModel heatingGridViewModel = new();
+            ContentViewModel = heatingGridViewModel;
+        }
     
         public void GoBack()
         {

@@ -35,6 +35,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatDemandView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatingGridView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatingUnitsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

@@ -5,41 +5,41 @@
              xmlns:vm="using:SemesterProject2.ViewModels"
              xmlns:views="clr-namespace:SemesterProject2.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SemesterProject2.Views.ElectricBoilerView"
-             x:DataType="vm:ElectricBoilerViewModel">
-
-<Panel>
+             x:Class="SemesterProject2.Views.HeatingGridView"
+             x:DataType="vm:HeatingGridViewModel">
+  <Panel>
   <TextBlock HorizontalAlignment="Center"
              VerticalAlignment="Top"
              Margin="15"
              FontSize="24">
-             Electric Boiler:
+             Heating Area
   </TextBlock>
+
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,300,0,10"
+             Margin="125,280,0,10"
              FontSize="18"
-             Text="{Binding EBoilerMaxHeat}" />
+             Text="Architecture:    single district heating network" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,330,0,10"
+             Margin="125,310,0,10"
              FontSize="18"
-             Text="{Binding EBoilerPCost}" />
+             Text="Size:                  1600 buildings" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,360,0,10"
+             Margin="125,340,0,10"
              FontSize="18"
-             Text="{Binding EBoilerMaxElec}" />
+             Text="City:                  Heatington" />
+
+  <Image HorizontalAlignment="Right" 
+         VerticalAlignment="Center" 
+         Margin="75" Height="500" Width="800" 
+         Source="/Assets/HeatingArea.png"/>
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
           x:CompileBindings="False"
-          Command="{Binding $parent[Window].DataContext.HeatingUnits}">
+          Command="{Binding $parent[Window].DataContext.GoBack}">
           Go Back
   </Button>
-  <Image HorizontalAlignment="Right" 
-         VerticalAlignment="Center" 
-         Margin="100" Height="550" Width="550" 
-         Source="/Assets/ElectricBoiler.png"/>
-</Panel>
-
+  </Panel>
 </UserControl>

@@ -228,6 +228,7 @@ namespace SemesterProject2.ViewModels
                 {
                     Name = "MWh",
                     NameTextSize = 12,
+                    MinLimit = 0,
                 }
             };
 
@@ -237,6 +238,7 @@ namespace SemesterProject2.ViewModels
                 {
                     Name = "MWh",
                     NameTextSize = 12,
+                    MinLimit = 0,
                 }
             };
 

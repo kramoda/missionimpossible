@@ -23,7 +23,7 @@
       XAxes="{Binding XAxesWi}"
       YAxes="{Binding YAxesWi}"
       Title="{Binding Scenario1Wi}"
-      ZoomMode="X">
+      ZoomMode="Both">
     </lvc:CartesianChart>
 
     <lvc:CartesianChart
@@ -32,7 +32,7 @@
       XAxes="{Binding XAxesSu}"
       YAxes="{Binding YAxesSu}"
       Title="{Binding Scenario1Su}"
-      ZoomMode="X">
+      ZoomMode="Both">
     </lvc:CartesianChart>
 
     <Button HorizontalAlignment="Left"
