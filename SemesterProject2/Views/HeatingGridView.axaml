@@ -17,23 +17,23 @@
 
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,280,0,10"
+             Margin="75,280,0,10"
              FontSize="18"
              Text="Architecture:    single district heating network" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,310,0,10"
+             Margin="75,310,0,10"
              FontSize="18"
              Text="Size:                  1600 buildings" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="125,340,0,10"
+             Margin="75,340,0,10"
              FontSize="18"
              Text="City:                  Heatington" />
 
   <Image HorizontalAlignment="Right" 
          VerticalAlignment="Center" 
-         Margin="75" Height="500" Width="800" 
+         Margin="75" Height="500" Width="700" 
          Source="/Assets/HeatingArea.png"/>
   <Button HorizontalAlignment="Left"
           VerticalAlignment="Bottom"
