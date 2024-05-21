@@ -33,6 +33,12 @@ namespace SemesterProject2.ViewModels
 
            ContentViewModel = heatingUnitsViewModel;
         }
+        
+        public void HeatingGrid()
+        {
+            HeatingGridViewModel heatingGridViewModel = new();
+            ContentViewModel = heatingGridViewModel;
+        }
     
         public void GoBack()
         {
@@ -73,6 +79,18 @@ namespace SemesterProject2.ViewModels
         {
             HeatDemandViewModel heatDemandViewModel = new();
             ContentViewModel = heatDemandViewModel;
+        }
+
+        public void Scenario1()
+        {
+            Scenario1ViewModel scenario1ViewModel = new();
+            ContentViewModel = scenario1ViewModel;
+        }
+
+        public void Scenario2()
+        {
+            Scenario2ViewModel scenario2ViewModel = new();
+            ContentViewModel = scenario2ViewModel;
         }
 
     }

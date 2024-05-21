@@ -10,7 +10,7 @@
   
   <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Spacing="25">
+                Spacing="40">
     <TextBlock Margin="5"
                 FontSize="16">
                 Main Menu
@@ -20,6 +20,10 @@
             Heating Units
     </Button>
     <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.HeatingGrid}">
+            Heating Grid
+    </Button>
+    <Button x:CompileBindings="False" 
             Command="{Binding $parent[Window].DataContext.HeatDemand}">
             Heat Demand
     </Button>
@@ -27,8 +31,14 @@
             Command="{Binding $parent[Window].DataContext.ElectricityPrices}">
             Electricity Prices
     </Button>
-    <Button>Result Data Manager</Button>
-    <Button>Optimizer</Button>
+    <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.Scenario1}">
+            Scenario 1
+    </Button>
+    <Button x:CompileBindings="False" 
+            Command="{Binding $parent[Window].DataContext.Scenario2}">
+            Scenario 2
+    </Button>
   </StackPanel>
 
   

@@ -17,22 +17,22 @@
   </TextBlock>
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="40,280,0,10"
+             Margin="125,280,0,10"
              FontSize="18"
              Text="{Binding GBoilerMaxHeat}" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="40,310,0,10"
+             Margin="125,310,0,10"
              FontSize="18"
              Text="{Binding GBoilerPCost}" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="40,340,0,10"
+             Margin="125,340,0,10"
              FontSize="18"
              Text="{Binding GBoilerEmission}" />
   <TextBlock HorizontalAlignment="Left"
              VerticalAlignment="Top"
-             Margin="40,370,0,10"
+             Margin="125,370,0,10"
              FontSize="18"
              Text="{Binding GBoilerGConsumption}" />
   <Button HorizontalAlignment="Left"
@@ -43,7 +43,7 @@
   </Button>
   <Image HorizontalAlignment="Right" 
          VerticalAlignment="Center" 
-         Margin="50" Height="300" Width="300" 
+         Margin="100" Height="550" Width="550" 
          Source="/Assets/GasBoiler.png"/>
 </Panel>
 

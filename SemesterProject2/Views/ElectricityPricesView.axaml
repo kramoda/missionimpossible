@@ -19,21 +19,21 @@
         </TextBlock>
        
         <lvc:CartesianChart
-        Margin="10,35,680,25"
-        Series="{Binding SeriesWi}"
-        XAxes="{Binding XAxesWi}"
-        YAxes="{Binding YAxesWi}"
-        Title="{Binding ElectricityPricesWi}"
-        ZoomMode="X">
+            Margin="10,35,680,25"
+            Series="{Binding SeriesWi}"
+            XAxes="{Binding XAxesWi}"
+            YAxes="{Binding YAxesWi}"
+            Title="{Binding ElectricityPricesWi}"
+            ZoomMode="X">
         </lvc:CartesianChart>
 
         <lvc:CartesianChart
-        Margin="680,35,10,25"
-        Series="{Binding SeriesSu}"
-        XAxes="{Binding XAxesSu}"
-        YAxes="{Binding YAxesSu}"
-        Title="{Binding ElectricityPricesSu}"
-        ZoomMode="X">
+            Margin="680,35,10,25"
+            Series="{Binding SeriesSu}"
+            XAxes="{Binding XAxesSu}"
+            YAxes="{Binding YAxesSu}"
+            Title="{Binding ElectricityPricesSu}"
+            ZoomMode="X">
         </lvc:CartesianChart>
 
        <!--
@@ -79,6 +79,6 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>-->
 
-</Panel>
+    </Panel>
 
 </UserControl>
