@@ -165,7 +165,7 @@ namespace SemesterProject2.ViewModels
                 Values = Sc1GBDataWi,
                 Name = "Gas Boiler",
                 Stroke = new SolidColorPaint(SKColors.Orange) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.Orange.WithAlpha(90)),
                 GeometryFill = null,
                 GeometryStroke = null
                 
@@ -176,7 +176,7 @@ namespace SemesterProject2.ViewModels
                 Values = Sc1OBDataWi,
                 Name = "Oil Boiler",
                 Stroke = new SolidColorPaint(SKColors.Brown) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(90)),
                 GeometryFill = null,
                 GeometryStroke = null
                 
@@ -187,7 +187,7 @@ namespace SemesterProject2.ViewModels
                 Values = Sc1GBDataSu,
                 Name = "Gas Boiler",
                 Stroke = new SolidColorPaint(SKColors.Orange) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.Orange.WithAlpha(90)),
                 GeometryFill = null,
                 GeometryStroke = null
             });
@@ -197,7 +197,7 @@ namespace SemesterProject2.ViewModels
                 Values = Sc1OBDataSu,
                 Name = "Oil Boiler",
                 Stroke = new SolidColorPaint(SKColors.Brown) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(90)),
                 GeometryFill = null,
                 GeometryStroke = null
             });
