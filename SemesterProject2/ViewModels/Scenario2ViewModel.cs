@@ -10,32 +10,12 @@ using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
-using System.Dynamic;
 using CsvHelper.Configuration;
 
 namespace SemesterProject2.ViewModels
 {
     public class Scenario2ViewModel : ViewModelBase
     {
-        public class Sc2DataWinter()
-        {
-            public double Sc2GBWi {get; set;}
-            public double Sc2OBWi {get; set;}
-            public double Sc2EKWi {get; set;}
-            public double Sc2GMWi {get; set;}
-            public string? TimeWi {get; set;}
-
-        }
-
-        public class Sc2DataSummer
-        {
-            public double Sc2GBWi {get; set;}
-            public double Sc2OBWi {get; set;}
-            public double Sc2EKWi {get; set;}
-            public double Sc2GMWi {get; set;}
-            public string? TimeSu {get; set;}
-        }
-
         private List<double> _sc2GBDataWi;
         public List<double> Sc2GBDataWi
         {
@@ -200,88 +180,88 @@ namespace SemesterProject2.ViewModels
             Sc2GMDataSu = _sc2GMDataSu;
             TimeFromSu = _timeFromSu;
 
-            SeriesWi.Add(new LineSeries<double>
+            SeriesWi.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2GBDataWi,
                 Name = "Gas Boiler",
-                Stroke = new SolidColorPaint(SKColors.Orange) { StrokeThickness = 4 },
-                Fill = null,
+                Stroke = new SolidColorPaint(SKColors.OrangeRed) { StrokeThickness = 4 },
+                Fill = new SolidColorPaint(SKColors.Orange),
                 GeometryFill = null,
                 GeometryStroke = null
                 
             });
 
-            SeriesWi.Add(new LineSeries<double>
+            SeriesWi.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2OBDataWi,
                 Name = "Oil Boiler",
                 Stroke = new SolidColorPaint(SKColors.Brown) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.SandyBrown),
                 GeometryFill = null,
                 GeometryStroke = null
                 
             });
             
-            SeriesWi.Add(new LineSeries<double>
+            SeriesWi.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2EKDataWi,
                 Name = "Electric Boiler",
-                Stroke = new SolidColorPaint(SKColors.LightGreen) { StrokeThickness = 4 },
-                Fill = null,
+                Stroke = new SolidColorPaint(SKColors.Green) { StrokeThickness = 4 },
+                Fill = new SolidColorPaint(SKColors.LightGreen),
                 GeometryFill = null,
                 GeometryStroke = null
                 
             });
             
-            SeriesWi.Add(new LineSeries<double>
+            SeriesWi.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2GMDataWi,
                 Name = "Gas Motor",
                 Stroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.LightBlue),
                 GeometryFill = null,
                 GeometryStroke = null
                 
             });
 
 
-            SeriesSu.Add(new LineSeries<double>
+            SeriesSu.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2GBDataSu,
                 Name = "Gas Boiler",
-                Stroke = new SolidColorPaint(SKColors.Orange) { StrokeThickness = 4 },
-                Fill = null,
+                Stroke = new SolidColorPaint(SKColors.OrangeRed) { StrokeThickness = 4 },
+                Fill = new SolidColorPaint(SKColors.Orange),
                 GeometryFill = null,
                 GeometryStroke = null
             });
 
-            SeriesSu.Add(new LineSeries<double>
+            SeriesSu.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2OBDataSu,
                 Name = "Oil Boiler",
                 Stroke = new SolidColorPaint(SKColors.Brown) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.SandyBrown),
                 GeometryFill = null,
                 GeometryStroke = null
             });
 
-            SeriesSu.Add(new LineSeries<double>
+            SeriesSu.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2EKDataSu,
                 Name = "Electric Boiler",
-                Stroke = new SolidColorPaint(SKColors.LightGreen) { StrokeThickness = 4 },
-                Fill = null,
+                Stroke = new SolidColorPaint(SKColors.Green) { StrokeThickness = 4 },
+                Fill = new SolidColorPaint(SKColors.LightGreen),
                 GeometryFill = null,
                 GeometryStroke = null
                 
             });
             
-            SeriesSu.Add(new LineSeries<double>
+            SeriesSu.Add(new StackedAreaSeries<double>
             {
                 Values = Sc2GMDataSu,
                 Name = "Gas Motor",
                 Stroke = new SolidColorPaint(SKColors.Blue) { StrokeThickness = 4 },
-                Fill = null,
+                Fill = new SolidColorPaint(SKColors.LightBlue),
                 GeometryFill = null,
                 GeometryStroke = null
                 

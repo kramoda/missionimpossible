@@ -1,11 +1,4 @@
 using ReactiveUI;
-using SemesterProject2.ViewModels;
-using System;
-using System.ComponentModel;
-using System.Reactive;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows;
-using System.Windows.Input;
 using TheElectricBoiler;
 
 namespace SemesterProject2.ViewModels
@@ -50,46 +43,6 @@ namespace SemesterProject2.ViewModels
             EBoilerMaxElec = _eBoilerMaxElec;
         }
 
-        /*
-        public string EBoilerMaxHeat()
-        {
-            //string HeatMax = "Maximum heat: " + electricBoiler.MaxHeat + "MW";
-            string HeatMax = $"Maximum heat: {electricBoiler.MaxHeat} MW";
-            return HeatMax;
-        }
-        
-        private string? EBoilerHeat;
-        public string? EBoilerMaxHeat
-        {
-            get => EBoilerHeat;
-            set
-            {
-            EBoilerHeat = value;
-            OnPropertyChanged("EBoilerMaxHeat");
-            }
-        }
-
-        public void NewTest()
-        {
-            EBoilerMaxHeat = "Test";
-        }
-
-        */
-
-
-        /*
-        public void EBoilerMaxHeat()
-        {
-            _message = $"Maximum heat: {electricBoiler.MaxHeat} MW";
-            Message = _message;
-        }
-        */
-        
-
-        /*
-        string ProductionCost = "Production Cost: " + electricBoiler.ProductionCost + "DKK / MWh(th)";
-        string MaximumElectricity = "Maximum electricity: " + electricBoiler.ElectricityMaximum + "MW";
-        */
 
     }
 }
