@@ -1,6 +1,4 @@
 ﻿using ReactiveUI;
-using System;
-using System.Reactive.Linq;
 
 
 namespace SemesterProject2.ViewModels

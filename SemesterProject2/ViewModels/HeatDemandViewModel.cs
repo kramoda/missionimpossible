@@ -15,20 +15,6 @@ namespace SemesterProject2.ViewModels
 {
     public class HeatDemandViewModel : ViewModelBase
     {
-        public class HDemandDataWinter()
-        {
-            public double HDemandWi {get; set;}
-            public string? TimeWi {get; set;}
-
-
-        }
-
-        public class HDemandDataSummer
-        {
-            public double HDemandSu {get; set;}
-            public string? TimeSu {get; set;}
-        }
-
         private List<double> _hDemandWi;
         public List<double> HDemandWi
         {
@@ -183,7 +169,6 @@ namespace SemesterProject2.ViewModels
                     NameTextSize = 12,
                 }
             };
-
         }
 
         public class HeatProductionData

@@ -14,36 +14,7 @@ using SkiaSharp;
 namespace SemesterProject2.ViewModels
 {
     public class ElectricityPricesViewModel : ViewModelBase
-    {
-        
-        //public ObservableCollection<EPriceDataWinter> WiGridData {get;} = new();
-        
-        public class EPriceDataWinter()
-        {
-            public double EPricesWi {get; set;}
-            public string? TimeWi {get; set;}
-
-
-        }
-
-        public class EPriceDataSummer
-        {
-            public double EPricesSu {get; set;}
-            public string? TimeSu {get; set;}
-        }
-        
-
-        /*
-        public List<object> _WiGridData;
-        List<object> WiGridData
-        {
-            get => _WiGridData;
-            set => this.RaiseAndSetIfChanged(ref _WiGridData, value);
-        }
-        */
-
-        //DKK local time,DKK local time,MWh,DKK / Mwh(el)
-
+    { 
         private List<double> _ePricesWi;
         public List<double> EPricesWi
         {
@@ -202,47 +173,8 @@ namespace SemesterProject2.ViewModels
                     NameTextSize = 12,
                 }
             };
-
-
-            /*
-           _WiGridData = new List<object>();
-           _WiGridData.Add("1");
-            */
-            /*
-            CSVConnect obj = new CSVConnect();
-            DataTable WinterData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationWinter.csv");
-            
-            var tempList = new List<object>();
-
-            foreach (DataRow row in WinterData.Rows)
-            {
-                var temp = new EPriceDataWinter();
-                temp.TimeWi = row["Time from"].ToString();
-                temp.EPricesWi = double.Parse(row["Electricity Price"].ToString()!);
-                WiGridData.Add(temp);
-            }
-            */
-
-            //WiGridData = tempList;
-            /*
-            CSVConnect obj2 = new CSVConnect();
-            DataTable SummerData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationSummer.csv");
-        
-            var tempList2 = new List<object>();
-
-            foreach (DataRow row in SummerData.Rows)
-            {
-                var temp = new EPriceDataSummer();
-                temp.TimeSu = row["Time from"].ToString();
-                temp.EPricesSu = double.Parse(row["Electricity Price"].ToString()!);
-                tempList2.Add(temp);
-
-            }
-
-            SuGridData = tempList2;
-            */
-
         }
+
         public class HeatProductionData
         {
             [Name("Time from")]
@@ -254,60 +186,6 @@ namespace SemesterProject2.ViewModels
             [Name("Electricity Price")]
             public double ElectricityPrice  { get; set; }
         }
-        
-        
-        /*
-        public List<object> _SuGridData;
-        List<object> SuGridData
-        {
-            get => _SuGridData;
-            set => this.RaiseAndSetIfChanged(ref _SuGridData, value);
-        }
-        */
-
-     /*
-        static void WinterDataTable(string[] args, List<object> WiGridData)
-        {
-        
-            CSVConnect obj = new CSVConnect();
-            DataTable WinterData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationWinter.csv");
-            
-            var tempList = new List<object>();
-
-            foreach (DataRow row in WinterData.Rows)
-            {
-                var temp = new EPriceDataWinter();
-                temp.TimeWi = row["DKK local time"].ToString();
-                temp.EPricesWi = double.Parse(row["DKK / Mwh(el)"].ToString()!);
-                tempList.Add(temp);
-            }
-
-            WiGridData = tempList;
-        }
-     */
-        
-
-     /*
-        static void SummerDataTable(string[] args, List<object> SuGridData)
-        {
-        CSVConnect obj = new CSVConnect();
-        DataTable SummerData = obj.CSVDatatable(@"SemesterProject2\CSV\2024HeatProductionOptimizationSummer.csv");
-        
-        var tempList = new List<object>();
-
-            foreach (DataRow row in SummerData.Rows)
-            {
-                var temp = new EPriceDataSummer();
-                temp.TimeSu = row["DKK local time"].ToString();
-                temp.EPricesSu = double.Parse(row["DKK / Mwh(el)"].ToString()!);
-                tempList.Add(temp);
-
-            }
-
-            SuGridData = tempList;
-        
-        }
-     */
     }
 
 }
