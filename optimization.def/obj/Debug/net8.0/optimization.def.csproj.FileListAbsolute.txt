@@ -1,0 +1,15 @@
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\bin\Debug\net8.0\optimization.def.exe
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\bin\Debug\net8.0\optimization.def.deps.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\bin\Debug\net8.0\optimization.def.runtimeconfig.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\bin\Debug\net8.0\optimization.def.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\bin\Debug\net8.0\optimization.def.pdb
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.AssemblyInfoInputs.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.AssemblyInfo.cs
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.csproj.CoreCompileInputs.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.sourcelink.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\refint\optimization.def.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.pdb
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\optimization.def.genruntimeconfig.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\obj\Debug\net8.0\ref\optimization.def.dll

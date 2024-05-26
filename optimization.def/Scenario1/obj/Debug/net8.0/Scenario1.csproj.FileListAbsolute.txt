@@ -1,0 +1,15 @@
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\bin\Debug\net8.0\Scenario1.exe
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\bin\Debug\net8.0\Scenario1.deps.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\bin\Debug\net8.0\Scenario1.runtimeconfig.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\bin\Debug\net8.0\Scenario1.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\bin\Debug\net8.0\Scenario1.pdb
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.AssemblyInfoInputs.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.AssemblyInfo.cs
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.csproj.CoreCompileInputs.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.sourcelink.json
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\refint\Scenario1.dll
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.pdb
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\Scenario1.genruntimeconfig.cache
+C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\optimization.def\Scenario1\obj\Debug\net8.0\ref\Scenario1.dll

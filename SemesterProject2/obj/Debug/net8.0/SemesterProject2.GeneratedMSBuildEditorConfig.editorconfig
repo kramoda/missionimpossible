@@ -13,30 +13,30 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SemesterProject2
-build_property.ProjectDir = C:\Users\pavli\Desktop\missionimpossible\missionimpossible\SemesterProject2\
+build_property.ProjectDir = C:\Users\monic\OneDrive\Documentos\2º semestre\mission imporsible\missionimpossible\SemesterProject2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/App.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/ElectricBoilerView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/ElectricBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/GasBoilerView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/GasBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/GasMotorView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/GasMotorView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/HeatingUnitsView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/HeatingUnitsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/OilBoilerView.axaml]
+[C:/Users/monic/OneDrive/Documentos/2º semestre/mission imporsible/missionimpossible/SemesterProject2/Views/OilBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
