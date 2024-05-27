@@ -12,7 +12,7 @@ class BoilerConsumptionCalculator
             return;
         }
 
-        string csvFilePath = args[0];
+        string csvFilePath "optimization.def\optimization.csv"= args[0];
         if (!File.Exists(csvFilePath))
         {
             Console.WriteLine("The CSV file does not exist.");
@@ -43,7 +43,7 @@ class BoilerConsumptionCalculator
                     continue; // Skip the header line.
                 }
 
-                var values = line.Split(',');
+                var values = line.Split(';');
                 if (values.Length < 7)
                 {
                     Console.WriteLine("The CSV file format is incorrect.");
