@@ -13,45 +13,45 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SemesterProject2
-build_property.ProjectDir = E:\Programming things\Semester project 2\missionimpossible\SemesterProject2\
+build_property.ProjectDir = C:\Users\pavli\Desktop\missionimpossible\missionimpossible\SemesterProject2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/App.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/ElectricBoilerView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/ElectricBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/ElectricityPricesView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/ElectricityPricesView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/GasBoilerView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/GasBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/GasMotorView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/GasMotorView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatDemandView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/HeatDemandView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatingGridView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/HeatingGridView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/HeatingUnitsView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/HeatingUnitsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/MainMenuView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/OilBoilerView.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/OilBoilerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/Scenario1View.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/Scenario1View.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programming things/Semester project 2/missionimpossible/SemesterProject2/Views/Scenario2View.axaml]
+[C:/Users/pavli/Desktop/missionimpossible/missionimpossible/SemesterProject2/Views/Scenario2View.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
