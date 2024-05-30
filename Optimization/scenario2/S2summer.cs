@@ -105,7 +105,7 @@ class Program
             double electricityPrice = array2[i];
             totalHeat += heatDemand;
 
-            if ((heatDemand > 5 && heatDemand < 8 && electricityPrice <= 1150) || (heatDemand < 5 && electricityPrice <= 500)) ///700
+            if ((heatDemand > 5 && heatDemand < 8 && electricityPrice <= 1150) || (heatDemand < 5 && electricityPrice <= 500)) 
             {
                 totalCost += electricBoilerCostPerHour + electricityPrice;
                 totalCO2 += 0.00;
@@ -114,7 +114,7 @@ class Program
                 electricBoilerUsage = heatDemand;
                 gasMotorUsage = 0.00;
             }
-            else if (heatDemand > 8 && electricityPrice <= 650)//700
+            else if (heatDemand > 8 && electricityPrice <= 650)
             {
                 totalCost += electricBoilerCostPerHour + electricityPrice + gasBoilerCostPerHour;
                 totalCO2 += gasBoilerCO2PerHour;
@@ -156,7 +156,7 @@ class Program
             string electricBoilerUsageColumn = i < ElectricBoilerUsage.Count ? ElectricBoilerUsage[i].ToString() : string.Empty;
             string gasMotorUsageColumn = i < GasMotorUsage.Count ? GasMotorUsage[i].ToString() : string.Empty;
 
-            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn + ";";
+            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn;
         }
 
         File.WriteAllLines(filePath, lines);

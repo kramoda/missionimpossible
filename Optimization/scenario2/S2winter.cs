@@ -156,7 +156,7 @@ class Program
             string electricBoilerUsageColumn = i < ElectricBoilerUsage.Count ? ElectricBoilerUsage[i].ToString() : string.Empty;
             string gasMotorUsageColumn = i < GasMotorUsage.Count ? GasMotorUsage[i].ToString() : string.Empty;
 
-            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn + ";";
+            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn;
         }
 
         File.WriteAllLines(filePath, lines);

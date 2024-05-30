@@ -116,7 +116,19 @@ namespace SemesterProject2.ViewModels
             _timeFromWi = new List<string>();
             
             string fileName = "S2winter.csv";
+            
             string path = Path.Combine(Environment.CurrentDirectory, "CSV", fileName);
+            
+            
+            
+            bool fileExists = CheckIfFileExists(path);
+            
+            static bool CheckIfFileExists(string path)
+            {
+                return File.Exists(path);
+            }    
+            
+
 
             using (var streamReader = new StreamReader(path))
             {
@@ -153,6 +165,16 @@ namespace SemesterProject2.ViewModels
             
             string fileName2 = "S2summer.csv";
             string path2 = Path.Combine(Environment.CurrentDirectory, "CSV", fileName2);
+          
+            
+            bool fileExists1 = CheckIfFileExists1(path2);
+            
+            static bool CheckIfFileExists1(string path2)
+            {
+                return File.Exists(path2);
+            }    
+            
+
 
             using (var streamReader = new StreamReader(path2))
             {
