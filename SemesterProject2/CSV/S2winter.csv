@@ -1,4 +1,4 @@
-Time from;Time to;Heat Demand;Electricity Price;GB;OB;EK;GM
+Time from;Time to;Heat Demand;Electricity Price;GB;OB;EB;GM
 02-08-2023 00:00;02-08-2023 01:00;6.62;1190.94;5.00;1.62;0.00;0.00
 02-08-2023 01:00;02-08-2023 02:00;6.85;1154.55;5.00;1.85;0.00;0.00
 02-08-2023 02:00;02-08-2023 03:00;6.98;1116.22;5.00;1.98;0.00;0.00

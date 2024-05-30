@@ -28,11 +28,11 @@ namespace SemesterProject2.ViewModels
             get => _sc2OBDataWi;
             set => this.RaiseAndSetIfChanged(ref _sc2OBDataWi, value);
         }
-        private List<double> _sc2EKDataWi;
-        public List<double> Sc2EKDataWi
+        private List<double> _sc2EBDataWi;
+        public List<double> Sc2EBDataWi
         {
-            get => _sc2EKDataWi;
-            set => this.RaiseAndSetIfChanged(ref _sc2EKDataWi, value);
+            get => _sc2EBDataWi;
+            set => this.RaiseAndSetIfChanged(ref _sc2EBDataWi, value);
         }
         private List<double> _sc2GMDataWi;
         public List<double> Sc2GMDataWi
@@ -61,11 +61,11 @@ namespace SemesterProject2.ViewModels
             get => _sc2OBDataSu;
             set => this.RaiseAndSetIfChanged(ref _sc2OBDataSu, value);
         }
-        private List<double> _sc2EKDataSu;
-        public List<double> Sc2EKDataSu
+        private List<double> _sc2EBDataSu;
+        public List<double> Sc2EBDataSu
         {
-            get => _sc2EKDataSu;
-            set => this.RaiseAndSetIfChanged(ref _sc2EKDataSu, value);
+            get => _sc2EBDataSu;
+            set => this.RaiseAndSetIfChanged(ref _sc2EBDataSu, value);
         }
         private List<double> _sc2GMDataSu;
         public List<double> Sc2GMDataSu
@@ -111,12 +111,18 @@ namespace SemesterProject2.ViewModels
 
             _sc2GBDataWi = new List<double>();
             _sc2OBDataWi = new List<double>();
-            _sc2EKDataWi = new List<double>();
+            _sc2EBDataWi = new List<double>();
             _sc2GMDataWi = new List<double>();
             _timeFromWi = new List<string>();
             
+            
+            string fileName = "S2W.csv";
+            string path = Path.Combine(Environment.CurrentDirectory, "Scenario2", fileName);
+            
+            /*
             string fileName = "S2winter.csv";
             string path = Path.Combine(Environment.CurrentDirectory, "CSV", fileName);
+            */
 
             using (var streamReader = new StreamReader(path))
             {
@@ -133,7 +139,7 @@ namespace SemesterProject2.ViewModels
                     {
                         _sc2GBDataWi.Add(record.GB);
                         _sc2OBDataWi.Add(record.OB);
-                        _sc2EKDataWi.Add(record.EK);
+                        _sc2EBDataWi.Add(record.EB);
                         _sc2GMDataWi.Add(record.GM);
                         _timeFromWi.Add(record.TimeFrom);
                     }
@@ -141,18 +147,24 @@ namespace SemesterProject2.ViewModels
             }
             Sc2GBDataWi = _sc2GBDataWi;
             Sc2OBDataWi = _sc2OBDataWi;
-            Sc2EKDataWi = _sc2EKDataWi;
+            Sc2EBDataWi = _sc2EBDataWi;
             Sc2GMDataWi = _sc2GMDataWi;
             TimeFromWi = _timeFromWi;
 
             _sc2GBDataSu = new List<double>();
             _sc2OBDataSu = new List<double>();
-            _sc2EKDataSu = new List<double>();
+            _sc2EBDataSu = new List<double>();
             _sc2GMDataSu = new List<double>();
             _timeFromSu = new List<string>();
             
+            
+            string fileName2 = "S2S.csv";
+            string path2 = Path.Combine(Environment.CurrentDirectory, "Scenario2", fileName2);
+            
+            /*
             string fileName2 = "S2summer.csv";
             string path2 = Path.Combine(Environment.CurrentDirectory, "CSV", fileName2);
+            */
 
             using (var streamReader = new StreamReader(path2))
             {
@@ -168,7 +180,7 @@ namespace SemesterProject2.ViewModels
                     {
                         _sc2GBDataSu.Add(record.GB);
                         _sc2OBDataSu.Add(record.OB);
-                        _sc2EKDataSu.Add(record.EK);
+                        _sc2EBDataSu.Add(record.EB);
                         _sc2GMDataSu.Add(record.GM);
                         _timeFromSu.Add(record.TimeFrom);
                     } 
@@ -176,7 +188,7 @@ namespace SemesterProject2.ViewModels
             }
             Sc2GBDataSu = _sc2GBDataSu;
             Sc2OBDataSu = _sc2OBDataSu;
-            Sc2EKDataSu = _sc2EKDataSu;
+            Sc2EBDataSu = _sc2EBDataSu;
             Sc2GMDataSu = _sc2GMDataSu;
             TimeFromSu = _timeFromSu;
 
@@ -204,7 +216,7 @@ namespace SemesterProject2.ViewModels
             
             SeriesWi.Add(new StackedAreaSeries<double>
             {
-                Values = Sc2EKDataWi,
+                Values = Sc2EBDataWi,
                 Name = "Electric Boiler",
                 Stroke = new SolidColorPaint(SKColors.Green) { StrokeThickness = 4 },
                 Fill = new SolidColorPaint(SKColors.LightGreen),
@@ -247,7 +259,7 @@ namespace SemesterProject2.ViewModels
 
             SeriesSu.Add(new StackedAreaSeries<double>
             {
-                Values = Sc2EKDataSu,
+                Values = Sc2EBDataSu,
                 Name = "Electric Boiler",
                 Stroke = new SolidColorPaint(SKColors.Green) { StrokeThickness = 4 },
                 Fill = new SolidColorPaint(SKColors.LightGreen),
@@ -309,6 +321,29 @@ namespace SemesterProject2.ViewModels
 
         }
 
+        /*        
+        public class Scenario2Data
+        {
+            [Name("timeFrom")]
+            public string TimeFrom { get; set; } = string.Empty;
+            [Name(" TimeTo")]
+            public string? TimeTo { get; set; } 
+            [Name(" HeatDemand")]
+            public double HeatDemand { get; set; }
+            [Name("  ElectricityPrice")]
+            public double ElectricityPrice { get; set; }
+            [Name(" GB")]
+            public double GB  { get; set; }
+            [Name(" OB")]
+            public double OB  { get; set; }
+            [Name(" EB")]
+            public double EB  { get; set; }
+            [Name(" GM")]
+            public double GM  { get; set; }
+        }
+        */
+        
+        
         public class Scenario2Data
         {
             [Name("Time from")]
@@ -323,11 +358,12 @@ namespace SemesterProject2.ViewModels
             public double GB  { get; set; }
             [Name("OB")]
             public double OB  { get; set; }
-            [Name("EK")]
-            public double EK  { get; set; }
+            [Name("EB")]
+            public double EB  { get; set; }
             [Name("GM")]
             public double GM  { get; set; }
         }
+        
 
     }
 }
