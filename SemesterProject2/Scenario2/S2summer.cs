@@ -5,10 +5,10 @@ using System.IO;
 
 class Scenario2Summer
 {
-    /*
+    
     static void S2Summer(string[] args)
     {
-        string filePath = @"Optimization\scenario2\S2S.csv";
+        string filePath = @"Scenario2\S2Sumer.csv";
         List<string> column3List = new List<string>();
         List<string> column4List = new List<string>();
 
@@ -93,7 +93,7 @@ class Scenario2Summer
         List<double> OilBoilerUsage = new List<double>();
         List<double> GasMotorUsage = new List<double>();
         List<double> ElectricBoilerUsage = new List<double>();
-        string filePath = @"Optimization\scenario2\S2S.csv";
+        string filePath = @"Scenario2\S2Sumer.csv";
 
         if (array1.Length != array2.Length)
         {
@@ -162,7 +162,7 @@ class Scenario2Summer
 
         File.WriteAllLines(filePath, lines);
 
-        string filePathResults = @"Optimization\scenario2\S2summerResults.csv";
+        string filePathResults = @"Scenario2\S2summerResults.csv";
         using (StreamWriter writer = new StreamWriter(filePathResults))
         {
             writer.WriteLine("Results for the summer:");
@@ -173,5 +173,5 @@ class Scenario2Summer
 
         Console.WriteLine("CSV file has been written successfully.");
     }
-    */
+    
 }
