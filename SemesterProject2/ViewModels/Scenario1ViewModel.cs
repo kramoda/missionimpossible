@@ -92,6 +92,13 @@ namespace SemesterProject2.ViewModels
             string fileName = "S1W.csv";
             string path = Path.Combine(Environment.CurrentDirectory, "Scenario1", fileName);
 
+            bool fileExists3 = CheckIfFileExists3(path);
+            
+            static bool CheckIfFileExists3(string path)
+            {
+                return File.Exists(path);
+            }  
+
             using (var streamReader = new StreamReader(path))
             {
                 var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
@@ -121,6 +128,15 @@ namespace SemesterProject2.ViewModels
             
             string fileName2 = "S1S.csv";
             string path2 = Path.Combine(Environment.CurrentDirectory, "Scenario1", fileName2);
+            string fileName2 = "S1summer.csv";
+            string path2 = Path.Combine(Environment.CurrentDirectory, "CSV", fileName2);
+            
+              bool fileExists2 = CheckIfFileExists2(path2);
+            
+                static bool CheckIfFileExists2(string path2)
+                {
+                    return File.Exists(path2);
+                }  
 
             using (var streamReader = new StreamReader(path2))
             {
