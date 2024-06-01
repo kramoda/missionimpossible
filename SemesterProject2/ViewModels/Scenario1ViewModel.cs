@@ -89,8 +89,14 @@ namespace SemesterProject2.ViewModels
             _sc1OBDataWi = new List<double>();
             _timeFromWi = new List<string>();
             
-            string fileName = "S1winter.csv";
-            string path = Path.Combine(Environment.CurrentDirectory, "CSV", fileName);
+            string fileName = "S1W.csv";
+            string path = Path.Combine(Environment.CurrentDirectory, "Scenario1", fileName);
+
+            bool fileExists3 = CheckIfFileExists3(path);
+            static bool CheckIfFileExists3(string path)
+            {
+                return File.Exists(path);
+            }  
 
             using (var streamReader = new StreamReader(path))
             {
@@ -119,8 +125,14 @@ namespace SemesterProject2.ViewModels
             _sc1OBDataSu = new List<double>();
             _timeFromSu = new List<string>();
             
-            string fileName2 = "S1summer.csv";
-            string path2 = Path.Combine(Environment.CurrentDirectory, "CSV", fileName2);
+            string fileName2 = "S1S.csv";
+            string path2 = Path.Combine(Environment.CurrentDirectory, "Scenario1", fileName2);
+            
+            bool fileExists2 = CheckIfFileExists2(path2);
+            static bool CheckIfFileExists2(string path2)
+            {
+                return File.Exists(path2);
+            }  
 
             using (var streamReader = new StreamReader(path2))
             {
@@ -230,15 +242,15 @@ namespace SemesterProject2.ViewModels
 
         public class Scenario1Data
         {
-            [Name("Time from")]
+            [Name("timeFrom")]
             public string TimeFrom { get; set; } = string.Empty;
-            [Name("Time to")]
+            [Name(" TimeTo")]
             public string? TimeTo { get; set; } 
-            [Name("Heat Demand")]
+            [Name(" HeatDemand")]
             public double HeatDemand { get; set; }
-            [Name("GB")]
+            [Name(" GB")]
             public double GB  { get; set; }
-            [Name("OB")]
+            [Name(" OB")]
             public double OB  { get; set; }
         }
 

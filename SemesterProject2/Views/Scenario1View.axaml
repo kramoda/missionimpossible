@@ -18,22 +18,46 @@
     </TextBlock>
     
     <lvc:CartesianChart
-      Margin="10,35,680,25"
+      Margin="10,35,680,75"
       Series="{Binding SeriesWi}"
       XAxes="{Binding XAxesWi}"
       YAxes="{Binding YAxesWi}"
       Title="{Binding Scenario1Wi}"
       ZoomMode="Both">
     </lvc:CartesianChart>
+    <StackPanel Spacing="5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+    <TextBlock
+      Margin="10,0,0,40" 
+      FontSize="13">
+      Winter Results:
+      Total Heat Produced: 1148.2 kWh
+      - Total Cost: 201600 DKK
+      - Total CO2 Emissions: 80640 kg
+    </TextBlock>
+    </StackPanel>
 
     <lvc:CartesianChart
-      Margin="680,35,10,25"
+      Margin="680,35,10,75"
       Series="{Binding SeriesSu}"
       XAxes="{Binding XAxesSu}"
       YAxes="{Binding YAxesSu}"
       Title="{Binding Scenario1Su}"
       ZoomMode="Both">
     </lvc:CartesianChart>
+    <StackPanel Spacing="5"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom">
+    <TextBlock
+      Margin="0,0,10,40" 
+      FontSize="13">
+      Summer Results:
+      Total Heat Produced: 273.31 kWh
+      - Total Cost: 84000 DKK
+      - Total CO2 Emissions: 36120 kg
+    </TextBlock>
+    </StackPanel>
 
     <Button HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
