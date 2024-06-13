@@ -16,8 +16,6 @@ class Scenario2Winter
         {
             using (var reader = new StreamReader(filePath))
             {
-                // Skip the header
-                reader.ReadLine();
                 
                 while (!reader.EndOfStream)
                 {
@@ -107,7 +105,7 @@ class Scenario2Winter
             double electricityPrice = array2[i];
             totalHeat += heatDemand;
 
-            if ((heatDemand > 5 && heatDemand < 8 && electricityPrice <= 700) || (heatDemand < 5 && electricityPrice <= 500))
+            if ((heatDemand > 5 && heatDemand < 8 && electricityPrice <= 1150) || (heatDemand < 5 && electricityPrice <= 500))
             {
                 totalCost += electricBoilerCostPerHour + electricityPrice;
                 totalCO2 += 0.00;
@@ -116,7 +114,7 @@ class Scenario2Winter
                 electricBoilerUsage = heatDemand;
                 gasMotorUsage = 0.00;
             }
-            else if (heatDemand > 8 && electricityPrice <= 700)
+            else if (heatDemand > 8 && electricityPrice <= 650)
             {
                 totalCost += electricBoilerCostPerHour + electricityPrice + gasBoilerCostPerHour;
                 totalCO2 += gasBoilerCO2PerHour;
@@ -125,10 +123,10 @@ class Scenario2Winter
                 oilBoilerUsage = 0.00;
                 gasMotorUsage = 0.00;
             }
-            else if (heatDemand > 5 && electricityPrice > 700)
+            else if (heatDemand > 5 && electricityPrice > 650)
             {
-                totalCost = gasBoilerCostPerHour + oilBoilerCostPerHour;
-                totalCO2 = gasBoilerCO2PerHour + oilBoilerCO2PerHour;
+                totalCost += gasBoilerCostPerHour + oilBoilerCostPerHour;
+                totalCO2 += gasBoilerCO2PerHour + oilBoilerCO2PerHour;
                 gasBoilerUsage = 5.00;
                 oilBoilerUsage = heatDemand - gasBoilerUsage;
                 electricBoilerUsage = 0.00;
@@ -153,12 +151,12 @@ class Scenario2Winter
         var lines = new List<string>(File.ReadAllLines(filePath));
         for (int i = 1; i < lines.Count; i++)
         {
-            string gasBoilerUsageColumn = i < GasBoilerUsage.Count ? GasBoilerUsage[i - 1].ToString() : string.Empty;
-            string oilBoilerUsageColumn = i < OilBoilerUsage.Count ? OilBoilerUsage[i - 1].ToString() : string.Empty;
-            string electricBoilerUsageColumn = i < ElectricBoilerUsage.Count ? ElectricBoilerUsage[i - 1].ToString() : string.Empty;
-            string gasMotorUsageColumn = i < GasMotorUsage.Count ? GasMotorUsage[i - 1].ToString() : string.Empty;
+            string gasBoilerUsageColumn = i < GasBoilerUsage.Count ? GasBoilerUsage[i].ToString() : string.Empty;
+            string oilBoilerUsageColumn = i < OilBoilerUsage.Count ? OilBoilerUsage[i].ToString() : string.Empty;
+            string electricBoilerUsageColumn = i < ElectricBoilerUsage.Count ? ElectricBoilerUsage[i].ToString() : string.Empty;
+            string gasMotorUsageColumn = i < GasMotorUsage.Count ? GasMotorUsage[i].ToString() : string.Empty;
 
-            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn + ";";
+            lines[i] += ";" + gasBoilerUsageColumn + ";" + oilBoilerUsageColumn + ";" + electricBoilerUsageColumn + ";" + gasMotorUsageColumn;
         }
 
         File.WriteAllLines(filePath, lines);
